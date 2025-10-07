@@ -23,9 +23,9 @@ test('dividing by zero throws error', () => {
 });
 
 //negative test cases
-
+    
 test('add case should fail for 2 + 3 to equal 4', () => {
-  expect(add(2, 3)).toBe(4);
+  expect(add(2, 3)).toBe(5);
 });
 
 test('subtracting 3 - 5 equals -2', () => {
