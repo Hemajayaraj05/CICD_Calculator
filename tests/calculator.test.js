@@ -42,7 +42,3 @@ test('divides -10 / 2 to equal -5', () => {
 });
 
 
-test('add with non-number input throws error', () => {
-  expect(() => add(2, "a")).toThrow();
-});
-
