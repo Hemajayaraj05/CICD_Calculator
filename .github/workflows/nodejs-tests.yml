@@ -1,4 +1,4 @@
-name: Run Calculator Tests
+name: Run Calculator Tests and Deploy
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  test-and-deploy:
+    runs-on: self-hosted
 
     steps:
       # Step 1: Checkout code
@@ -27,3 +27,16 @@ jobs:
       # Step 4: Run tests
       - name: Run tests
         run: npm test
+
+      # Step 5: Build the app (if needed)
+      - name: Build project
+        run: npm run build
+
+      # Step 6: Deploy (example)
+      - name: Deploy
+        run: |
+          echo "Deploying to production..."
+          # Example: copy build files to a folder
+          mkdir -p C:\deploy-folder
+          Copy-Item -Path "dist\*" -Destination "C:\deploy-folder" -Recurse -Force
+          echo "Deployment completed!"
