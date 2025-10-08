@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
   "start": "node src/calculator.js",
-  "test": "jest"
-  },
+  "test": "jest",
+  "build": "echo 'No build needed for this project'"
+ },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hemajayaraj05/CICD_Calculator.git"

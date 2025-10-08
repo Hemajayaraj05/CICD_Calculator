@@ -1,4 +1,4 @@
-name: Run Calculator Tests and Deploy
+name: Run Calculator Tests
 
 on:
   push:
@@ -11,32 +11,23 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      # Step 1: Checkout code
       - uses: actions/checkout@v3
 
-      # Step 2: Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
 
-      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Run tests
       - name: Run tests
         run: npm test
 
-      # Step 5: Build the app (if needed)
-      - name: Build project
-        run: npm run build
-
-      # Step 6: Deploy (example)
+      # Optional deploy step (for self-hosted runner)
       - name: Deploy
         run: |
-          echo "Deploying to production..."
-          # Example: copy build files to a folder
+          echo "Deploying..."
           mkdir -p C:\deploy-folder
-          Copy-Item -Path "dist\*" -Destination "C:\deploy-folder" -Recurse -Force
+          Copy-Item -Path "src\*" -Destination "C:\deploy-folder" -Recurse -Force
           echo "Deployment completed!"
