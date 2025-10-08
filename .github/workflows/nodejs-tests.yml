@@ -28,6 +28,7 @@ jobs:
       - name: Deploy
         run: |
           echo "Deploying..."
-          mkdir -p C:\deploy-folder
-          Copy-Item -Path "src\*" -Destination "C:\deploy-folder" -Recurse -Force
+          mkdir -p ~/deploy-folder
+          cp -r src/* ~/deploy-folder/
           echo "Deployment completed!"
+
